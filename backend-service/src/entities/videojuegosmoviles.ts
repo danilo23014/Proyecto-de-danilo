@@ -13,4 +13,7 @@ export class videojuegosmoviles {
 
   @Column("decimal")
   price!: number;
+
+  @Column("text")
+  imgUrl!: string;
 }

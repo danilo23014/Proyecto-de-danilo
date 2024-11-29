@@ -1,5 +1,5 @@
 // app.js
-import { getProducts, getProductById, updateProduct, deleteProduct } from './api.js';
+import { getProducts, getProductByID, updateProduct, deleteProduct } from './api.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   const productList = document.getElementById('product-list');
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 window.viewProduct = async (id) => {
-  const product = await getProductById(id);
+  const product = await getProductByID(id);
   const productDetails = `
     <div class="col">
       <img class="img-fluid" src="${product.imgUrl}">
@@ -33,7 +33,7 @@ window.viewProduct = async (id) => {
 };
 
 window.enableEdit = async (id) => {
-  const product = await getProductById(id);
+  const product = await getProductByID(id);
   const editForm = `
     <div class="row gap-3">
       <input type="text" id="name" value="${product.name}">
